@@ -16,7 +16,8 @@ const dbconfig = require("./config/dbconfig");
 dbconfig();
 //Configuring Routes
 const user = require("./routes/user");
-app.use("/", user);
+const scrap = require("./routes/scraping");
+app.use("/", user, scrap);
 
 //Setting up PORT
 app.listen(PORT, () => {
